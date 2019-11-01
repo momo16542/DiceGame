@@ -28,6 +28,17 @@ namespace DiceGame
                 this.bets = 0;
             }
         }
+        public bool IsWin(int[] dicePoints)
+        {
+            bool isWin = false;
+            switch (number)
+            {
+
+            }
+
+
+            return isWin;
+        }
 
 
         public decimal GetBonus()

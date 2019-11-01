@@ -56,8 +56,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BetPoco.cs" />
-    <Compile Include="Bonus\IDistributeBonus.cs" />
-    <Compile Include="Bonus\NumberOne.cs" />
+    <Compile Include="Bonus\Big.cs" />
+    <Compile Include="Bonus\TwoDicePoints.cs" />
+    <Compile Include="Bonus\SingleDicePoints.cs" />
+    <Compile Include="Bonus\TotalDicePoints.cs" />
+    <Compile Include="Bonus\TripleDice.cs" />
+    <Compile Include="Bonus\DoubleDice.cs" />
+    <Compile Include="Bonus\Small.cs" />
+    <Compile Include="Bonus\WinFuction.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="DiceButtonViewModel.cs" />
     <Compile Include="MainwindowViewModel.cs" />

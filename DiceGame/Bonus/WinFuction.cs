@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace DiceGame.Bonus
 {
-    class NumberOne : IDistributeBonus
-    {
-        public decimal DistributeBonus(decimal bet)
-        {
-            return bet * 2;
-        }
+    abstract class WinFuction
+    {     
+        public abstract bool IsWin(int[] dicePoints);
+        public decimal Odds { get; set; }
     }
 }
