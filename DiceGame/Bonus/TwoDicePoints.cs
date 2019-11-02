@@ -14,25 +14,14 @@ namespace DiceGame.Bonus
         {
             dicePoint1 = _dicePoint1;
             dicePoint2 = _dicePoint2;
+            Odds = 6;
         }
 
         public override bool IsWin(int[] dicePoints)
         {
-            var count = dicePoints.Count(x => x == dicePoint);
-            if (count == 1)
-            {
-                Odds = 1;
-            }
-            else if (count == 2)
-            {
-                Odds = 2;
-            }
-            else if (count == 2)
-            {
-                Odds = 3;
-            }
+            var count = dicePoints.GroupBy(x=>x).Count(x => x.Key == dicePoint1 || x.Key == dicePoint2);            
 
-            return count > 0;
+            return count ==2;
         }
 
     }
