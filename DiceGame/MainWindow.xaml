@@ -8,7 +8,9 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    mc:Ignorable="d">    
+    d:DataContext="{d:DesignInstance Type=local:MainwindowViewModel,
+                                     IsDesignTimeCreatable=True}"
+    mc:Ignorable="d">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -27,10 +29,6 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
@@ -69,10 +67,95 @@
                         </StackPanel>
                     </Grid>
                 </local:DiceButton>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.ColumnSpan="3"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="Each double 1 wins 11" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="Each triple 1 wins 180" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="1 wins 30" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="Each triple 1 wins 180" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="6"
+                        Grid.ColumnSpan="3"
+                        Margin="3"
+                        VerticalAlignment="Center"
+                        Text="Each double 1 wins 11" />
+                    <local:DiceButton
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="1"
+                        DataContext="{Binding DiceButtons[1]}"
+                        Style="{StaticResource DoublePoints}" />
+                    <local:DiceButton
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="1"
+                        DataContext="{Binding DiceButtons[2]}"
+                        Style="{StaticResource DoublePoints}" />
+                    <local:DiceButton
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="1"
+                        DataContext="{Binding DiceButtons[3]}"
+                        Style="{StaticResource DoublePoints}" />
+                    <local:DiceButton
+                        Grid.Row="1"
+                        Grid.Column="6"
+                        Margin="1"
+                        DataContext="{Binding DiceButtons[7]}"
+                        Style="{StaticResource DoublePoints}" />
+                    <local:DiceButton
+                        Grid.Row="1"
+                        Grid.Column="7"
+                        Margin="1"
+                        DataContext="{Binding DiceButtons[8]}"
+                        Style="{StaticResource DoublePoints}" />
+                    <local:DiceButton
+                        Grid.Row="1"
+                        Grid.Column="8"
+                        Margin="1"
+                        DataContext="{Binding DiceButtons[9]}"
+                        Style="{StaticResource DoublePoints}" />
+                </Grid>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
@@ -91,8 +174,95 @@
                 </Grid.ColumnDefinitions>
                 <local:DiceButton
                     Margin="1"
-     
+                    DataContext="{Binding DiceButtons[15]}"
                     Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="1"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[16]}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Margin="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="24"
+                            Foreground="Red"
+                            Text="{Binding Text1}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Margin="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding Text2}"
+                            TextWrapping="Wrap" />
+                    </Grid>
+                </local:DiceButton>
+                <local:DiceButton
+                    Grid.Column="2"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[17]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="3"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[18]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="4"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[19]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="5"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[20]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="6"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[21]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="7"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[22]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="8"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[23]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="9"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[24]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="10"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[25]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="11"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[26]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="12"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[27]}"
+                    Style="{StaticResource TotalDicePoints}" />
+                <local:DiceButton
+                    Grid.Column="13"
+                    Margin="1"
+                    DataContext="{Binding DiceButtons[28]}"
+                    Style="{StaticResource TotalDicePoints}" />
+
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>

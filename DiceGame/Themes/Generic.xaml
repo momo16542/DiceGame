@@ -21,14 +21,17 @@
         <Setter Property="BorderBrush" Value="Red" />
     </Style>
     <Style x:Key="TotalDicePoints" TargetType="{x:Type local:DiceButton}">
+        <Setter Property="Content" Value="{Binding}" />
         <Setter Property="ContentTemplate">
             <Setter.Value>
                 <DataTemplate>
+
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
+
                         <TextBlock
                             Grid.Row="0"
                             Margin="1"
@@ -42,12 +45,38 @@
                             Margin="1"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            TextWrapping="Wrap"
-                            Text="{Binding Text2}" />
+                            Text="{Binding Text2}"
+                            TextWrapping="Wrap" />
                     </Grid>
                 </DataTemplate>
             </Setter.Value>
-                
+        </Setter>
+    </Style>
+    <DataTemplate DataType="{x:Type  local:Dice1ViewModel}">
+        <local:Dice1 />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type  local:Dice2ViewModel}">
+        <local:Dice2 />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type  local:Dice3ViewModel}">
+        <local:Dice3 />
+    </DataTemplate>
+    <Style x:Key="DoublePoints" TargetType="{x:Type local:DiceButton}">
+        <Setter Property="Content" Value="{Binding}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <ContentControl Content="{Binding DiceControl}"  Margin="2"/>
+                        <ContentControl Grid.Row="1" Content="{Binding DiceControl}" Margin="2"  />
+                    </Grid>
+
+                </DataTemplate>
+            </Setter.Value>
         </Setter>
     </Style>
 </ResourceDictionary>
