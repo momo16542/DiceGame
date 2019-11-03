@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace DiceGame.Bonus
 {
-    abstract class WinFuction
-    {     
+    public abstract class WinFuction
+    {
         public abstract bool IsWin(int[] dicePoints);
         public decimal Odds { get; set; }
+        public decimal GetBonus(decimal bet)
+        {
+            return bet * Odds;
+        }
+
     }
 }

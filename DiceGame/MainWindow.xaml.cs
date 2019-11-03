@@ -20,9 +20,12 @@ namespace DiceGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainwindowViewModel viewModel;
         public MainWindow()
         {
             InitializeComponent();
+            viewModel = new MainwindowViewModel();
+            this.DataContext = viewModel;
         }
     }
 }

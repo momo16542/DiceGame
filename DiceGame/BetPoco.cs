@@ -8,30 +8,25 @@ namespace DiceGame
 {
     public class BetPoco
     {
-        public BetPoco(int number, decimal odds)
+        public BetPoco(int number)
         {
             Number = number;
-            this.odds = odds;
+
         }
         public int Number { get; }
-        private decimal bets;
-        private readonly decimal odds;
+        public decimal Bets { get; private set; }
+
         public void AddBets(decimal bets)
         {
-            this.bets += bets;
+            this.Bets += bets;
         }
         public void RemoveBets(decimal bets)
         {
-            this.bets -= bets;
-            if (this.bets <= 0)
+            this.Bets -= bets;
+            if (this.Bets <= 0)
             {
-                this.bets = 0;
+                this.Bets = 0;
             }
-        }      
-        public decimal GetBonus()
-        {
-            var bonus = bets * odds;
-            return bonus > 0 ? bonus : 0;
         }
 
     }

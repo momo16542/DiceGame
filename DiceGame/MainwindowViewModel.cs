@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DiceGame
 {
-    class MainwindowViewModel:ViewModelBase
+    class MainwindowViewModel : ViewModelBase
     {
 
         public List<DiceButtonViewModel> DiceButtons
@@ -21,7 +21,7 @@ namespace DiceGame
         private List<DiceButtonViewModel> _DiceButtons;
         public MainwindowViewModel()
         {
-            dic
+            DiceButtons = DiceButtonViewModel.GetDiceButtonsViewModels();
         }
     }
 }

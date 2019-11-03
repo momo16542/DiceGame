@@ -28,7 +28,7 @@ namespace DiceGame
                 new DiceButtonViewModel(13,new DoubleDice(5){ Odds =11}){Text1="5 Double"},
                 new DiceButtonViewModel(14,new DoubleDice(6){ Odds =11}){Text1="6 Double"},
                 new DiceButtonViewModel(15,new Big(){ Odds =1 }){Text1="Big"},
-                new DiceButtonViewModel(16,new TotalDicePoints(4){ Odds=60}){Text1="4"},
+                new DiceButtonViewModel(16,new TotalDicePoints(4){ Odds=60}){Text1="4",Text2="1 wins 60"},
                 new DiceButtonViewModel(17,new TotalDicePoints(5){ Odds=20}){Text1="5"},
                 new DiceButtonViewModel(18,new TotalDicePoints(6){ Odds=18}){Text1="6"},
                 new DiceButtonViewModel(19,new TotalDicePoints(7){ Odds=12}){Text1="7"},
@@ -73,7 +73,7 @@ namespace DiceGame
         {
             winFuction = win;
             Number = number;
-            Bet = new BetPoco(number, odds);
+            Bet = new BetPoco(number);
         }
         public int Number { get; }
         public BetPoco Bet { get; }
@@ -99,5 +99,16 @@ namespace DiceGame
             }
         }
         private string _Text2;
+
+        public object DiceControl
+        {
+            get { return _DiceControl; }
+            set
+            {
+                _DiceControl = value;
+                OnPropertyChanged();
+            }
+        }
+        private object _DiceControl;
     }
 }

@@ -20,5 +20,34 @@
         <Setter Property="Background" Value="Red" />
         <Setter Property="BorderBrush" Value="Red" />
     </Style>
-
+    <Style x:Key="TotalDicePoints" TargetType="{x:Type local:DiceButton}">
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Margin="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="24"
+                            Foreground="Red"
+                            Text="{Binding Text1}" />
+                        <TextBlock
+                            Grid.Row="1"
+                            Margin="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            TextWrapping="Wrap"
+                            Text="{Binding Text2}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+                
+        </Setter>
+    </Style>
 </ResourceDictionary>
