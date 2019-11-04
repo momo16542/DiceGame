@@ -66,6 +66,9 @@
     <Compile Include="Bonus\WinFuction.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="Dice2ViewModel.cs" />
+    <Compile Include="Dice6ViewModel.cs" />
+    <Compile Include="Dice5ViewModel.cs" />
+    <Compile Include="Dice4ViewModel.cs" />
     <Compile Include="Dice3ViewModel.cs" />
     <Compile Include="DiceButtonViewModel.cs" />
     <Compile Include="Dice1ViewModel.cs" />
