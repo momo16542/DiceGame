@@ -24,7 +24,7 @@ namespace DiceGame
         public MainWindow()
         {
             InitializeComponent();
-            viewModel = new MainwindowViewModel();
+            viewModel = MainwindowViewModel.GetInstance();
             this.DataContext = viewModel;
         }
     }

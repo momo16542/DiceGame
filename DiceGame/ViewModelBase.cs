@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DiceGame
 {
-    class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyname = null)

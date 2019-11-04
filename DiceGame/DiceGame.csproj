@@ -70,9 +70,12 @@
     <Compile Include="Dice5ViewModel.cs" />
     <Compile Include="Dice4ViewModel.cs" />
     <Compile Include="Dice3ViewModel.cs" />
+    <Compile Include="DiceButton.cs" />
     <Compile Include="DiceButtonViewModel.cs" />
     <Compile Include="Dice1ViewModel.cs" />
     <Compile Include="MainwindowViewModel.cs" />
+    <Compile Include="TsCommand.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="Dice2.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,10 +98,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dice6.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DiceButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,9 +126,6 @@
     </Compile>
     <Compile Include="Dice6.xaml.cs">
       <DependentUpon>Dice6.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DiceButton.xaml.cs">
-      <DependentUpon>DiceButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="EllipseConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">

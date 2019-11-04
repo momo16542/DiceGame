@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DiceGame
 {
-    public class BetPoco
+    public class BetPoco : ViewModelBase
     {
         public BetPoco(int number)
         {
@@ -14,8 +14,18 @@ namespace DiceGame
 
         }
         public int Number { get; }
-        public decimal Bets { get; private set; }
 
+
+        public decimal Bets
+        {
+            get { return _Bets; }
+            set
+            {
+                _Bets = value;
+                OnPropertyChanged();
+            }
+        }
+        private decimal _Bets;
         public void AddBets(decimal bets)
         {
             this.Bets += bets;
@@ -29,5 +39,9 @@ namespace DiceGame
             }
         }
 
+        internal void ClearBets()
+        {
+            Bets = 0;
+        }
     }
 }
