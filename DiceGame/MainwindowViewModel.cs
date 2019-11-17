@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DiceGame
@@ -130,7 +131,8 @@ namespace DiceGame
             Dice dice = new Dice();
             decimal bonus = 0;
             var dicePoint = dice.DrawDice();
-            Results.Add($"{Game} :  {dicePoint[0]} , {dicePoint[1]} , {dicePoint[2] } | {dicePoint.Sum()}");
+            var points = $"{Game} :  {dicePoint[0]} , {dicePoint[1]} , {dicePoint[2] } | {dicePoint.Sum()}";
+            Results.Add(points);
 
             foreach (var item in DiceButtons)
             {
@@ -138,6 +140,8 @@ namespace DiceGame
                 bonus += dice.DistributeBonus(dicePoint, item.WinFuction, item.Bet);
                 item.Bet.ClearBets();
             }
+            MessageBox.Show($"Result:{points}" +
+                $"\r\nYou win:{bonus}");
             User.AddPoints(bonus);
             RefreshPoints();
             GameCount++;
